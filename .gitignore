@@ -1,0 +1,6 @@
+build/
+roms/
+emulator
+trace.log
+write.txt
+.DS_Store
