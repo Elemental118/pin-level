@@ -1,12 +1,12 @@
 # pin-level
-An all-purpose pin-level modular emulator in C for MacOS / Linux (Windows support coming soon!)
+An all-purpose pin-level modular emulator in C for macOS / Linux (Windows support coming soon!)
 
 ## Progress
 Currently completing the very first computer emulation, the Apple II.
 
 * Main CPU/RAM/ROM pipeline complete
 * Keyboard integration complete
-* Video currently supports normal TEXT mode only, with more coming soon!
+* Video currently supports normal (no inverse or flash yet) TEXT mode only, with more coming soon!
 
 The simulation, without `--trace`, runs on average 19% faster than a real Apple II. This headroom will be used in updates in the future!
 
@@ -38,7 +38,7 @@ In rare exceptions, a function can take an extra parameter for special reasons.
 
 The top-level logic, in `main.c`, follows a similar structure, but without private structs and normal pins. Instead, `main.c` defines a `struct board`, which contains all the chips in the motherboard and all of the connections between them. Such connections are called *nets*, and are represented by `bool *`s, just as pins are. They are created with `net_create()` and freed en masse with `net_free_all()`.
 
-A net should never change its location—rather, the pins on chips should set their addresses to the address of the net. Thus two or more `bool *`s are pointing to the same memory location, and any side can change the value and have it readbale by any other side.
+A net should never change its location—rather, the pins on chips should set their addresses to the address of the net. Thus two or more `bool *`s are pointing to the same memory location, and any side can change the value and have it readable by any other side.
 
 Everything is finished off with a `sigint_handler()` and a keyboard polling loop in `main`.
 
@@ -57,7 +57,7 @@ Then run `make` in the project root to create `emulator`, and run with `./emulat
 
 To `RESET` simply type a backslash (`\`), and to exit the simulation type a pipe character (`|`).
 
-Note that `Ctrl+C` is disabled to allow it to be parsed by the emulated machine, so if for any reason the normal exit path (`|`) isnt working, you should send `SIGINT` with `kill -2 <PID>` in another terminal window.
+Note that `Ctrl+C` is disabled to allow it to be parsed by the emulated machine, so if for any reason the normal exit path (`|`) isn't working, you should send `SIGINT` with `kill -2 <PID>` in another terminal window.
 
 Please avoid at all costs sending any other destruction signals, **ESPECIALLY** not the unhandleable `SIGKILL`. The `SIGINT` handler restores your terminal to the state it was in before, because the emulator changes a potpourri of terminal settings that need to be restored. If you must send one of these signals, the easiest way to restore your settings is by closing the terminal window and opening a new one.
 
