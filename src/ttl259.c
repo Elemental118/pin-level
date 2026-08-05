@@ -9,11 +9,13 @@ struct ttl259_priv {
 struct ttl259 *ttl259_create(void)
 {
 	struct ttl259 *c = calloc(9, sizeof(*c));
+	c->priv = calloc(1, sizeof(*c->priv));
 	return c;
 }
 
 void ttl259_free(struct ttl259 *c)
 {
+	free(c->priv);
 	free(c);
 }
 
