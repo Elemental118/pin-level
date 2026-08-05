@@ -1,23 +1,23 @@
 #include <stdlib.h>
 
-#include "ls259.h"
+#include "ttl259.h"
 
-struct ls259_priv {
+struct ttl259_priv {
 	bool q_prev[8];
 };
 
-struct ls259 *ls259_create(void)
+struct ttl259 *ttl259_create(void)
 {
-	struct ls259 *c = calloc(9, sizeof(*c));
+	struct ttl259 *c = calloc(9, sizeof(*c));
 	return c;
 }
 
-void ls259_free(struct ls259 *c)
+void ttl259_free(struct ttl259 *c)
 {
 	free(c);
 }
 
-void ls259_tick(struct ls259 *c)
+void ttl259_tick(struct ttl259 *c)
 {
 	if (*c->clr) {
 		for (int i = 0; i < 8; i++) {

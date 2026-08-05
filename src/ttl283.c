@@ -1,19 +1,19 @@
 #include <stdlib.h>
 
-#include "ls283.h"
+#include "ttl283.h"
 
-struct ls283 *ls283_create(void)
+struct ttl283 *ttl283_create(void)
 {
-	struct ls283 *c = calloc(1, sizeof(*c));
+	struct ttl283 *c = calloc(1, sizeof(*c));
 	return c;
 }
 
-void ls283_free(struct ls283 *c)
+void ttl283_free(struct ttl283 *c)
 {
 	free(c);
 }
 
-void ls283_tick(struct ls283 *c)
+void ttl283_tick(struct ttl283 *c)
 {
 	u8 a = 0;
 	u8 b = 0;

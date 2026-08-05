@@ -1,9 +1,9 @@
-#ifndef LS257_H
-#define LS257_H
+#ifndef TTL257_H
+#define TTL257_H
 
 #include "types.h"
 
-struct ls257 {
+struct ttl257 {
 	const bool *a[4];
 	const bool *b[4];
 	bool       *y[4];
@@ -11,8 +11,8 @@ struct ls257 {
 	const bool *s;
 };
 
-struct ls257 *ls257_create(void);
-void ls257_free(struct ls257 *c);
-void ls257_tick(struct ls257 *c);
+struct ttl257 *ttl257_create(void);
+void ttl257_free(struct ttl257 *c);
+void ttl257_tick(struct ttl257 *c);
 
 #endif

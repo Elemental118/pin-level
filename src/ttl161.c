@@ -1,28 +1,28 @@
 #include <stdlib.h>
 
-#include "ls161.h"
+#include "ttl161.h"
 
 #define CLK_RISING(c) ((bool)(!(c)->priv->clk_prev && *(c)->clk))
 
-struct ls161_priv {
+struct ttl161_priv {
 	bool clk_prev;
 	u8 num_prev;
 };
 
-struct ls161 *ls161_create(void)
+struct ttl161 *ttl161_create(void)
 {
-	struct ls161 *c = calloc(1, sizeof(*c));
+	struct ttl161 *c = calloc(1, sizeof(*c));
 	c->priv = calloc(1, sizeof(*c->priv));
 	return c;
 }
 
-void ls161_free(struct ls161 *c)
+void ttl161_free(struct ttl161 *c)
 {
 	free(c->priv);
 	free(c);
 }
 
-void ls161_tick(struct ls161 *c)
+void ttl161_tick(struct ttl161 *c)
 {
 	if (!*c->clr) {
 		c->priv->num_prev = 0;

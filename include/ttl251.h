@@ -1,9 +1,9 @@
-#ifndef LS251_H
-#define LS251_H
+#ifndef TTL251_H
+#define TTL251_H
 
 #include "types.h"
 
-struct ls251 {
+struct ttl251 {
 	const bool *d[8];
 	bool       *y;
 	bool       *w;
@@ -11,8 +11,8 @@ struct ls251 {
 	const bool *oe;
 };
 
-struct ls251 *ls251_create(void);
-void ls251_free(struct ls251 *c);
-void ls251_tick(struct ls251 *c);
+struct ttl251 *ttl251_create(void);
+void ttl251_free(struct ttl251 *c);
+void ttl251_tick(struct ttl251 *c);
 
 #endif

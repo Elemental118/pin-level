@@ -1,19 +1,19 @@
 #include <stdlib.h>
 
-#include "ls32.h"
+#include "ttl32.h"
 
-struct ls32 *ls32_create(void)
+struct ttl32 *ttl32_create(void)
 {
-	struct ls32 *c = calloc(1, sizeof(*c));
+	struct ttl32 *c = calloc(1, sizeof(*c));
 	return c;
 }
 
-void ls32_free(struct ls32 *c)
+void ttl32_free(struct ttl32 *c)
 {
 	free(c);
 }
 
-void ls32_tick(struct ls32 *c)
+void ttl32_tick(struct ttl32 *c)
 {
 	for (int i = 0; i < 4; i++) {
 		*c->y[i] = *c->a[i] | *c->b[i];

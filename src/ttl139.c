@@ -1,19 +1,19 @@
 #include <stdlib.h>
 
-#include "ls139.h"
+#include "ttl139.h"
 
-struct ls139 *ls139_create(void)
+struct ttl139 *ttl139_create(void)
 {
-	struct ls139 *c = calloc(1, sizeof(*c));
+	struct ttl139 *c = calloc(1, sizeof(*c));
 	return c;
 }
 
-void ls139_free(struct ls139 *c)
+void ttl139_free(struct ttl139 *c)
 {
 	free(c);
 }
 
-void ls139_tick(struct ls139 *c)
+void ttl139_tick(struct ttl139 *c)
 {
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < 4; j++) {

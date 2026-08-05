@@ -1,28 +1,28 @@
 #include <stdlib.h>
 
-#include "ls74.h"
+#include "ttl74.h"
 
 #define CLK_RISING(c, i) ((bool)(!(c)->priv->clk_prev[i] && *(c)->clk[i]))
 
-struct ls74_priv {
+struct ttl74_priv {
 	bool q_prev[2];
 	bool clk_prev[2];
 };
 
-struct ls74 *ls74_create(void)
+struct ttl74 *ttl74_create(void)
 {
-	struct ls74 *c = calloc(1, sizeof(*c));
+	struct ttl74 *c = calloc(1, sizeof(*c));
 	c->priv = calloc(1, sizeof(*c->priv));
 	return c;
 }
 
-void ls74_free(struct ls74 *c)
+void ttl74_free(struct ttl74 *c)
 {
 	free(c->priv);
 	free(c);
 }
 
-void ls74_tick(struct ls74 *c)
+void ttl74_tick(struct ttl74 *c)
 {
 	for (int i = 0; i < 2; i++) {
 		if (!*c->pr[i] && *c->clr[i]) {

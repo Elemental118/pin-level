@@ -1,16 +1,16 @@
-#ifndef LS32_H
-#define LS32_H
+#ifndef TTL32_H
+#define TTL32_H
 
 #include "types.h"
 
-struct ls32 {
+struct ttl32 {
 	const bool *a[4];
 	const bool *b[4];
 	bool       *y[4];
 };
 
-struct ls32 *ls32_create(void);
-void ls32_free(struct ls32 *c);
-void ls32_tick(struct ls32 *c);
+struct ttl32 *ttl32_create(void);
+void ttl32_free(struct ttl32 *c);
+void ttl32_tick(struct ttl32 *c);
 
 #endif

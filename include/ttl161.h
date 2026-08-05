@@ -1,9 +1,9 @@
-#ifndef LS161_H
-#define LS161_H
+#ifndef TTL161_H
+#define TTL161_H
 
 #include "types.h"
 
-struct ls161 {
+struct ttl161 {
 	const bool *d[4];
 	bool       *q[4];
 	const bool *enp;
@@ -13,11 +13,11 @@ struct ls161 {
 	const bool *clr;
 	bool       *rco;
 
-	struct ls161_priv *priv;
+	struct ttl161_priv *priv;
 };
 
-struct ls161 *ls161_create(void);
-void ls161_free(struct ls161 *c);
-void ls161_tick(struct ls161 *c);
+struct ttl161 *ttl161_create(void);
+void ttl161_free(struct ttl161 *c);
+void ttl161_tick(struct ttl161 *c);
 
 #endif

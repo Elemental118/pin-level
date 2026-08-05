@@ -1,19 +1,19 @@
 #include <stdlib.h>
 
-#include "ls138.h"
+#include "ttl138.h"
 
-struct ls138 *ls138_create(void)
+struct ttl138 *ttl138_create(void)
 {
-	struct ls138 *c = calloc(1, sizeof(*c));
+	struct ttl138 *c = calloc(1, sizeof(*c));
 	return c;
 }
 
-void ls138_free(struct ls138 *c)
+void ttl138_free(struct ttl138 *c)
 {
 	free(c);
 }
 
-void ls138_tick(struct ls138 *c)
+void ttl138_tick(struct ttl138 *c)
 {
 	for (int i = 0; i < 8; i++) {
 		*c->y[i] = true;

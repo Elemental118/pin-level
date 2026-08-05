@@ -1,9 +1,9 @@
-#ifndef LS51_H
-#define LS51_H
+#ifndef TTL51_H
+#define TTL51_H
 
 #include "types.h"
 
-struct ls51 {
+struct ttl51 {
 	const bool *a1[3];
 	const bool *b1[3];
 	const bool *a2[2];
@@ -11,8 +11,8 @@ struct ls51 {
 	bool       *y[2];
 };
 
-struct ls51 *ls51_create(void);
-void ls51_free(struct ls51 *c);
-void ls51_tick(struct ls51 *c);
+struct ttl51 *ttl51_create(void);
+void ttl51_free(struct ttl51 *c);
+void ttl51_tick(struct ttl51 *c);
 
 #endif

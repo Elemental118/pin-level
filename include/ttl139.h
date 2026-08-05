@@ -1,16 +1,16 @@
-#ifndef LS139_H
-#define LS139_H
+#ifndef TTL139_H
+#define TTL139_H
 
 #include "types.h"
 
-struct ls139 {
+struct ttl139 {
 	const bool *s[2][2];
 	const bool *g[2];
 	bool       *y[2][4];
 };
 
-struct ls139 *ls139_create(void);
-void ls139_free(struct ls139 *c);
-void ls139_tick(struct ls139 *c);
+struct ttl139 *ttl139_create(void);
+void ttl139_free(struct ttl139 *c);
+void ttl139_tick(struct ttl139 *c);
 
 #endif

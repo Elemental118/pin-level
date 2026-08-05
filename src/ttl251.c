@@ -1,19 +1,19 @@
 #include <stdlib.h>
 
-#include "ls251.h"
+#include "ttl251.h"
 
-struct ls251 *ls251_create(void)
+struct ttl251 *ttl251_create(void)
 {
-	struct ls251 *c = calloc(1, sizeof(*c));
+	struct ttl251 *c = calloc(1, sizeof(*c));
 	return c;
 }
 
-void ls251_free(struct ls251 *c)
+void ttl251_free(struct ttl251 *c)
 {
 	free(c);
 }
 
-void ls251_tick(struct ls251 *c)
+void ttl251_tick(struct ttl251 *c)
 {
 	if (*c->oe) {
 		return;

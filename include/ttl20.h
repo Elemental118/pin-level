@@ -1,9 +1,9 @@
-#ifndef LS20_H
-#define LS20_H
+#ifndef TTL20_H
+#define TTL20_H
 
 #include "types.h"
 
-struct ls20 {
+struct ttl20 {
 	const bool *a[2];
 	const bool *b[2];
 	const bool *c[2];
@@ -11,8 +11,8 @@ struct ls20 {
 	bool       *y[2];
 };
 
-struct ls20 *ls20_create(void);
-void ls20_free(struct ls20 *c);
-void ls20_tick(struct ls20 *c);
+struct ttl20 *ttl20_create(void);
+void ttl20_free(struct ttl20 *c);
+void ttl20_tick(struct ttl20 *c);
 
 #endif

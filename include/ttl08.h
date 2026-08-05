@@ -1,16 +1,16 @@
-#ifndef LS08_H
-#define LS08_H
+#ifndef TTL08_H
+#define TTL08_H
 
 #include "types.h"
 
-struct ls08 {
+struct ttl08 {
 	const bool *a[4];
 	const bool *b[4];
 	bool       *y[4];
 };
 
-struct ls08 *ls08_create(void);
-void ls08_free(struct ls08 *c);
-void ls08_tick(struct ls08 *c);
+struct ttl08 *ttl08_create(void);
+void ttl08_free(struct ttl08 *c);
+void ttl08_tick(struct ttl08 *c);
 
 #endif
