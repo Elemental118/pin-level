@@ -8,7 +8,7 @@ struct ls257 {
 	const bool *b[4];
 	bool       *y[4];
 	const bool *oe;
-	const bool *sel;
+	const bool *s;
 };
 
 struct ls257 *ls257_create(void);

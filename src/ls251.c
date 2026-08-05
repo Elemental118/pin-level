@@ -15,9 +15,9 @@ void ls251_free(struct ls251 *c)
 
 void ls251_tick(struct ls251 *c)
 {
-	if (*c->s) {
+	if (*c->oe) {
 		return;
 	}
-	*c->y =  *c->d[(u8)*c->sel[0] | ((u8)*c->sel[1] << 1) | ((u8)*c->sel[2] << 2)];
+	*c->y =  *c->d[(u8)*c->s[0] | ((u8)*c->s[1] << 1) | ((u8)*c->s[2] << 2)];
 	*c->w = !*c->y;
 }

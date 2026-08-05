@@ -17,7 +17,7 @@ void ls257_tick(struct ls257 *c)
 {
 	if (!*c->oe) {
 		for (int i = 0; i < 4; i++) {
-			*c->y[i] = *c->sel ? *c->b[i] : *c->a[i];
+			*c->y[i] = *c->s ? *c->b[i] : *c->a[i];
 		}
 	}
 }
